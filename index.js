@@ -40,3 +40,51 @@ async function fetchMovies() {
         return [];
     }
 }
+// ========== RENDER FUNCTIONS ==========
+function renderMovies(movies) {
+    // Hide all wrappers initially
+    movieListWrappers.forEach(wrapper => wrapper.classList.add('hidden'));
+    
+    // Calculate how many carousels we need
+    const carouselsNeeded = Math.ceil(movies.length / 5);
+    
+    for (let i = 0; i < carouselsNeeded; i++) {
+        const wrapper = movieListWrappers[i];
+        const list = wrapper.querySelector('.movie-list');
+        
+        // Clear the list
+        list.innerHTML = '';
+        
+        // Add new movies
+        const startIdx = i * 5;
+        const endIdx = startIdx + 5;
+        const moviesToAdd = movies.slice(startIdx, endIdx);
+        
+        // Show this wrapper
+        wrapper.classList.remove('hidden');
+        
+        moviesToAdd.forEach(movie => {
+            const movieItem = document.createElement('div');
+            movieItem.className = 'movie-list-item';
+            movieItem.innerHTML = `
+                <img class="movie-list-item-img" src="${movie.image}" alt="${movie.title}">
+                <span class="movie-list-item-title">${movie.title}</span>
+                <p class="movie-list-item-desc">${movie.description.substring(0, 100)}...</p>
+                <button class="movie-list-item-button">WATCH</button>
+            `;
+            list.appendChild(movieItem);
+        });
+        
+        // Reset carousel state
+        if (carouselStates[i]) {
+            carouselStates[i].position = 0;
+            carouselStates[i].clickCounter = 0;
+        }
+        list.style.transform = 'translateX(0)';
+    }
+    
+    displayedMovies = movies;
+    addMovieHoverEffects();
+    initCarousels();
+}
+
