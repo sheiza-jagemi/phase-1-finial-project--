@@ -519,4 +519,70 @@ movie-list-item-img {
     margin-bottom: 8px;
     width: fit-content;
 }
+/* Responsive adjustments */
+@media only screen and (max-width: 992px) {
+    .footer-content {
+        justify-content: space-between;
+        padding: 0 30px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .footer {
+        padding: 40px 20px 0;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        padding: 0;
+    }
+    
+    .footer-section {
+        max-width: 100%;
+        margin-left: 0;
+        padding: 0 10px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .footer {
+        padding: 30px 15px 0;
+    }
+    
+    .footer-section {
+        min-width: 100%;
+    }
+    /* Ensure sections are properly hidden by default */
+.series-section,
+.movies-section,
+.popular-section,
+.list-section {
+    display: none;
+}
+
+/* Active state for menu items */
+.menu-list-item.active {
+    background-color: green;
+    color: white;
+}
+
+/* Active state for sidebar icons */
+.left-menu-icon.active {
+    background-color: green;
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Hover effects */
+.menu-list-item:hover:not(.active) {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.left-menu-icon:hover:not(.active) {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+}
 
