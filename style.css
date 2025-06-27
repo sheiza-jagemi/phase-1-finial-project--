@@ -100,3 +100,54 @@ search-container {
 .search-icon:hover {
     color: green;
 }
+.profile-container {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.profile-text-container {
+    margin: 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.profile-picture {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.toggle {
+    width: 40px;
+    height: 20px;
+    background-color: white;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5px;
+    position: relative;
+    cursor: pointer;
+}
+
+.toggle-icon {
+    color: gold;
+    font-size: 12px;
+}
+
+.toggle-ball {
+    width: 18px;
+    height: 18px;
+    background-color: #333;
+    border-radius: 50%;
+    position: absolute;
+    right: 2px;
+    cursor: pointer;
+    transition: 1s all ease;
+}
