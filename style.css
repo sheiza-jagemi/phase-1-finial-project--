@@ -313,3 +313,79 @@ movie-list-item-img {
 .movie-list-item-button:hover {
     background-color: darkgreen;
 }
+.arrow {
+    font-size: 120px;
+    position: absolute;
+    top: 90px;
+    right: 0;
+    color: lightgreen;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.arrow:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Dark/Light Mode Styles */
+.container.active {
+    background-color: white;
+}
+
+.movie-list-title.active {
+    color: black;
+}
+
+.navbar-container.active {
+    background-color: white;
+    color: black;
+}
+
+.navbar-container.active .menu-list-item {
+    color: #333;
+}
+
+.navbar-container.active .menu-list-item:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container.active .menu-list-item.active {
+    color: white;
+}
+
+.navbar-container.active .search-input {
+    background-color: #ddd;
+    color: #333;
+}
+
+.navbar-container.active .search-icon {
+    color: #333;
+}
+
+.sidebar.active {
+    background-color: white;
+}
+
+.sidebar.active .left-menu-icon {
+    color: #333;
+}
+
+.sidebar.active .left-menu-icon:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.sidebar.active .left-menu-icon.active {
+    color: white;
+}
+
+.toggle.active {
+    background-color: black;
+}
+
+.toggle-ball.active {
+    background-color: white;
+    transform: translateX(-20px);
+}
