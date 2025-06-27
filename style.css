@@ -389,3 +389,64 @@ movie-list-item-img {
     background-color: white;
     transform: translateX(-20px);
 }
+/* Responsive Styles */
+@media only screen and (max-width: 940px) {
+    .menu-list {
+        display: none;
+    }
+    
+    .search-container {
+        margin-left: auto;
+    }
+    
+    .search-input {
+        width: 150px;
+    }
+    
+    .search-input:focus {
+        width: 180px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .navbar-container {
+        padding: 0 20px;
+    }
+    
+    .logo {
+        font-size: 24px;
+    }
+    
+    .search-input {
+        width: 120px;
+        padding: 6px 25px 6px 8px;
+    }
+    
+    .search-input:focus {
+        width: 140px;
+    }
+    
+    .search-icon {
+        font-size: 14px;
+    }
+    
+    .profile-text {
+        display: none;
+    }
+    
+    .featured-desc {
+        width: 300px;
+        font-size: 14px;
+    }
+    
+    .movie-list-item-img {
+        width: 200px;
+        height: 150px;
+    }
+    
+    .arrow {
+        font-size: 80px;
+        top: 60px;
+    }
+}
+
