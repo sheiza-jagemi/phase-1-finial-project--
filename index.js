@@ -87,4 +87,116 @@ function renderMovies(movies) {
     addMovieHoverEffects();
     initCarousels();
 }
+ ==========.EVENT.HANDLERS. ==========
+function handleSearch() {
+    const searchTerm = searchInput.value.trim().toLowerCase();
+    
+    if (searchTerm) {
+        const filteredMovies = allMovies.filter(movie => 
+            movie.title.toLowerCase().includes(searchTerm) ||
+            (movie.genre && movie.genre.some(g => g.toLowerCase().includes(searchTerm))) ||
+            movie.description.toLowerCase().includes(searchTerm)
+        );
+        
+        if (filteredMovies.length > 0) {
+            renderMovies(filteredMovies);
+        } else {
+            alert('No movies found matching your search');
+            renderMovies(allMovies);
+        }
+    } else {
+        renderMovies(allMovies);
+    }
+}
+
+function toggleDarkMode() {
+    const ball = document.querySelector(".toggle-ball");
+    const toggleItems = document.querySelectorAll(
+        ".container, .movie-list-title, .navbar-container, .sidebar, .left-menu-icon, .toggle, .footer"
+    );
+
+    toggleItems.forEach((item) => {
+        item.classList.toggle("active");
+    });
+    ball.classList.toggle("active");
+}
+
+function addMovieHoverEffects() {
+    document.querySelectorAll('.movie-list-item').forEach(item => {
+        // Add event listeners only once
+        if (item.dataset.hoverEnabled) return;
+        item.dataset.hoverEnabled = true;
+        
+        const img = item.querySelector('.movie-list-item-img');
+        const title = item.querySelector('.movie-list-item-title');
+        const desc = item.querySelector('.movie-list-item-desc');
+        const btn = item.querySelector('.movie-list-item-button');
+        
+        item.addEventListener('mouseenter', () => {
+            if (img) img.style.transform = 'scale(1.2)';
+            if (title) title.style.opacity = '1';
+            if (desc) desc.style.opacity = '1';
+            if (btn) btn.style.opacity = '1';
+        });
+        
+        item.addEventListener('mouseleave', () => {
+            if (img) img.style.transform = 'scale(1)';
+            if (title) title.style.opacity = '0';
+            if (desc) desc.style.opacity = '0';
+            if (btn) btn.style.opacity = '0';
+        });
+    });
+}
+
+function initCarousels() {
+    // Initialize carousel states if needed
+    if (carouselStates.length === 0) {
+        movieLists.forEach((_, i) => {
+            carouselStates[i] = {
+                position: 0,
+                clickCounter: 0
+            };
+        });
+    }
+
+    // Get arrows again to ensure we have current references
+    const currentArrows = document.querySelectorAll('.arrow');
+    
+    currentArrows.forEach((arrow, i) => {
+        // Remove existing event listeners
+        const newArrow = arrow.cloneNode(true);
+        arrow.parentNode.replaceChild(newArrow, arrow);
+        
+        newArrow.addEventListener("click", () => {
+            const list = movieLists[i];
+            // Skip if wrapper is hidden or list doesn't exist
+            if (!list || list.closest('.movie-list-wrapper')?.classList.contains('hidden')) return;
+            
+            const items = list.querySelectorAll(".movie-list-item");
+            if (items.length <= 4) return;
+            
+            // Calculate item width including margin
+            const itemWidth = items[0].offsetWidth + 30; // 30px margin
+            
+            // Calculate how many items can be visible
+            const visibleItems = Math.floor(list.offsetWidth / itemWidth);
+            
+            // Calculate max scroll position
+            const maxScroll = (items.length - visibleItems) * itemWidth;
+            
+            if (carouselStates[i].position > -maxScroll) {
+                carouselStates[i].position -= itemWidth;
+                carouselStates[i].clickCounter++;
+                list.style.transform = `translateX(${carouselStates[i].position}px)`;
+            } else {
+                // Reset to beginning
+                carouselStates[i].position = 0;
+                carouselStates[i].clickCounter = 0;
+                list.style.transform = 'translateX(0)';
+            }
+        });
+    });
+}
+
+// ========== INITIALIZATION ==========
 
