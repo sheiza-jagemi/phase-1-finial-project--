@@ -1,0 +1,64 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "title": "House of Cards",
+      "year": 2013,
+      "rating": 5,
+      "seasons": 6,
+      "description": "A Congressman works with his equally conniving wife to exact revenge on the people who betrayed him.",
+      "image": "https://source.unsplash.com/random/300x450/?political,drama",
+      "genre": ["Drama", "Political", "Thriller"]
+    },
+    {
+      "id": 2,
+      "title": "Orange is the New Black",
+      "year": 2013,
+      "rating": 4,
+      "seasons": 7,
+      "description": "Convicted of a decade-old crime of transporting drug money, a woman enters a federal prison.",
+      "image": "https://source.unsplash.com/random/300x450/?prison,women",
+      "genre": ["Comedy", "Drama"]
+    },
+    {
+      "id": 3,
+      "title": "Unbreakable Kimmy Schmidt",
+      "year": 2015,
+      "rating": 4,
+      "seasons": 4,
+      "description": "A woman is rescued from a doomsday cult and starts life over again in New York City.",
+      "image": "https://source.unsplash.com/random/300x450/?comedy,newyork",
+      "genre": ["Comedy"]
+    },
+    {
+      "id": 4,
+      "title": "Stranger Things",
+      "year": 2016,
+      "rating": 5,
+      "seasons": 4,
+      "description": "When a young boy disappears, his mother, a police chief, and his friends must confront terrifying supernatural forces.",
+      "image": "https://source.unsplash.com/random/300x450/?80s,horror",
+      "genre": ["Sci-Fi", "Horror", "Drama"]
+    },
+    {
+      "id": 5,
+      "title": "The Crown",
+      "year": 2016,
+      "rating": 5,
+      "seasons": 4,
+      "description": "Follows the political rivalries and romance of Queen Elizabeth II's reign and the events that shaped the second half of the 20th century.",
+      "image": "https://source.unsplash.com/random/300x450/?royalty,england",
+      "genre": ["Drama", "Historical"]
+    },
+    {
+      "id": 6,
+      "title": "Black Mirror",
+      "year": 2011,
+      "rating": 5,
+      "seasons": 5,
+      "description": "An anthology series exploring a twisted, high-tech world where humanity's greatest innovations and darkest instincts collide.",
+      "image": "https://source.unsplash.com/random/300x450/?technology,future",
+      "genre": ["Sci-Fi", "Dystopian"]
+    }
+  ]
+}

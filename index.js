@@ -40,6 +40,7 @@ async function fetchMovies() {
         return [];
     }
 }
+
 // ========== RENDER FUNCTIONS ==========
 function renderMovies(movies) {
     // Hide all wrappers initially
@@ -87,7 +88,8 @@ function renderMovies(movies) {
     addMovieHoverEffects();
     initCarousels();
 }
- ==========.EVENT.HANDLERS. ==========
+
+// ========== EVENT HANDLERS ==========
 function handleSearch() {
     const searchTerm = searchInput.value.trim().toLowerCase();
     
@@ -199,4 +201,33 @@ function initCarousels() {
 }
 
 // ========== INITIALIZATION ==========
+async function initializeApp() {
+    // Show loading state
+    document.querySelector('.featured-desc').textContent = "Loading movies...";
+    
+    allMovies = await fetchMovies();
+    
+    if (allMovies.length > 0) {
+        renderMovies(allMovies);
+        document.querySelector('.featured-desc').textContent = 
+            "Browse through our collection of popular shows and movies.";
+    } else {
+        console.warn('Using original content only');
+        document.querySelector('.featured-desc').textContent = 
+            "Browse our collection of shows and movies (offline mode).";
+        // Initialize with static content
+        addMovieHoverEffects();
+        initCarousels();
+    }
+    
+    // Event listeners
+    document.querySelector(".toggle-ball").addEventListener("click", toggleDarkMode);
+    searchIcon.addEventListener('click', handleSearch);
+    searchInput.addEventListener('keypress', (e) => e.key === 'Enter' && handleSearch());
+    
+    // Initialize components
+    initCarousels();
+}
 
+// Start the app
+initializeApp();
