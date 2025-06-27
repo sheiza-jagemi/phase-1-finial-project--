@@ -66,7 +66,8 @@ body {
     background-color: green;
     color: white;
 }
-search-container {
+
+.search-container {
     position: relative;
     margin-right: 20px;
 }
@@ -100,6 +101,7 @@ search-container {
 .search-icon:hover {
     color: green;
 }
+
 .profile-container {
     flex: 2;
     display: flex;
@@ -150,7 +152,9 @@ search-container {
     right: 2px;
     cursor: pointer;
     transition: 1s all ease;
-}.sidebar {
+}
+
+.sidebar {
     width: 50px;
     height: 100vh;
     background-color: #444;
@@ -186,6 +190,7 @@ search-container {
     color: white;
     transform: scale(1.1);
 }
+
 .container {
     background-color: #151515;
     min-height: calc(100vh - 50px);
@@ -228,6 +233,7 @@ search-container {
     background-color: darkgreen;
     transform: scale(1.05);
 }
+
 .movie-list-container {
     padding: 0 20px;
     margin-bottom: 40px;
@@ -263,7 +269,8 @@ search-container {
 .movie-list-item:hover .movie-list-item-button {
     opacity: 1;
 }
-movie-list-item-img {
+
+.movie-list-item-img {
     transition: all 0.5s ease-in-out;
     width: 270px;
     height: 200px;
@@ -313,6 +320,7 @@ movie-list-item-img {
 .movie-list-item-button:hover {
     background-color: darkgreen;
 }
+
 .arrow {
     font-size: 120px;
     position: absolute;
@@ -389,6 +397,7 @@ movie-list-item-img {
     background-color: white;
     transform: translateX(-20px);
 }
+
 /* Responsive Styles */
 @media only screen and (max-width: 940px) {
     .menu-list {
@@ -449,6 +458,7 @@ movie-list-item-img {
         top: 60px;
     }
 }
+
 /* Footer Styles */
 .footer {
     background-color: #222;
@@ -519,6 +529,7 @@ movie-list-item-img {
     margin-bottom: 8px;
     width: fit-content;
 }
+
 /* Responsive adjustments */
 @media only screen and (max-width: 992px) {
     .footer-content {
@@ -585,4 +596,3 @@ movie-list-item-img {
 }
 
 }
-
