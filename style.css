@@ -186,3 +186,45 @@ search-container {
     color: white;
     transform: scale(1.1);
 }
+.container {
+    background-color: #151515;
+    min-height: calc(100vh - 50px);
+    color: white;
+}
+
+.content-container {
+    margin-left: 50px;
+    padding-top: 50px;
+}
+
+.featured-content {
+    height: 50vh;
+    width: 100%;
+}
+
+.featured-title {
+    width: 10%;
+}
+
+.featured-desc {
+    width: 500px;
+    color: lightgray;
+    margin: 30px 0;
+}
+
+.featured-button {
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.featured-button:hover {
+    background-color: darkgreen;
+    transform: scale(1.05);
+}
