@@ -449,4 +449,74 @@ movie-list-item-img {
         top: 60px;
     }
 }
+/* Footer Styles */
+.footer {
+    background-color: #222;
+    color: #fff;
+    padding: 50px 0 0;
+    font-family: 'Roboto', sans-serif;
+    border-top: 2px solid green;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 120px;
+    gap: 50px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 10%;
+    max-width: 20%;
+    margin-left: 50px;
+    padding: 50px;
+}
+
+.footer-section h3 {
+    color: green;
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    position: relative;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.footer-section h3::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 40px;
+    height: 2px;
+    background-color: green;
+}
+
+.footer-section p, 
+.footer-section li {
+    margin-bottom: 12px;
+    color: #bbb;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-section li {
+    margin-bottom: 8px;
+    width: fit-content;
+}
 
