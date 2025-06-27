@@ -150,4 +150,39 @@ search-container {
     right: 2px;
     cursor: pointer;
     transition: 1s all ease;
+}.sidebar {
+    width: 50px;
+    height: 100vh;
+    background-color: #444;
+    position: fixed;
+    top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.left-menu-icon {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 30px;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left-menu-icon:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.left-menu-icon.active {
+    background-color: green;
+    color: white;
+    transform: scale(1.1);
 }
