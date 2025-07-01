@@ -1,6 +1,7 @@
 // ========== API CONFIGURATION ==========
 const API_URL = "https://api.tvmaze.com/shows";
-const API_BASE_URL = "http://localhost:3000/movies";
+
+const DB_API_URL = 'http://localhost:3000/movies';   
 
 // ========== MOVIE DATA MANAGEMENT ==========
 let allMovies = [];
